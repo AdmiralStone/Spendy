@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Spendy</string>
+    <string name="submit_text">Submit</string>
+
 </resources>
