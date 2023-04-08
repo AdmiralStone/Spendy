@@ -12,6 +12,7 @@
 
 
     <TextView
+        android:visibility="invisible"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,6 +81,7 @@
         android:textSize="15sp"/>
 
     <TextView
+        android:id="@+id/forgotPassword"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,5 +89,16 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="15sp"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:paddingLeft="70dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="You have succesfully logged out!"-->
+<!--        android:textColor="@color/design_default_color_on_primary"-->
+<!--        android:textStyle="bold" />-->
 
 </LinearLayout>

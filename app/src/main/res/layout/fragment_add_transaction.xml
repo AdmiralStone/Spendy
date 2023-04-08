@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddTransaction"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#fafafa">
+
+    <EditText
+        android:id="@+id/add_amount"
+        android:layout_marginTop="260dp"
+        android:padding="15dp"
+        android:hint="Amount"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"/>
+
+    <EditText
+        android:id="@+id/add_category"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:hint="Type"
+        android:inputType="text"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"/>
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Date"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
+        android:text="@string/submit_text"
+        android:textSize="40px"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="140dp"
+        android:padding="15dp"/>
+</LinearLayout>

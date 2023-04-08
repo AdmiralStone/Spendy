@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Spendy</string>
     <string name="submit_text">Submit</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="export">Export</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update">Update</string>
+    <string name="category">Category :</string>
+    <string name="date">Date :</string>
+    <string name="delete">Delete</string>
 
 </resources>

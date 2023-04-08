@@ -10,5 +10,6 @@
     <color name="teal_100">#00DBF8</color>
     <color name="electric_yellow">#FFE500</color>
     <color name="red">#FF0000</color>
+    <color name="underlined">#BDB8B8</color>
 
 </resources>
