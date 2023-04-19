@@ -94,7 +94,7 @@ class DashBoard : Fragment() {
 
     private fun EventChangeListener(){
         db = FirebaseFirestore.getInstance()
-        db.collection("Expenses").document(firebaseUser.uid).collection("ExpenseLog")
+        db.collection("Expenses").document(firebaseUser.uid).collection("ExpenseLog").orderBy("Date")
             .addSnapshotListener(object :EventListener<QuerySnapshot>{
                 override fun onEvent(
                     value: QuerySnapshot?,

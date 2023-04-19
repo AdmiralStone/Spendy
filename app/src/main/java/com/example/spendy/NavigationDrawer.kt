@@ -53,14 +53,15 @@ class NavigationDrawer : AppCompatActivity(),Comunicator {
             it.isChecked = true
             when(it.itemId){
                 R.id.nav_dashboard -> replaceFragment(DashBoard(),it.title.toString())
-                R.id.nav_export -> Toast.makeText(applicationContext,"Clicked Export", Toast.LENGTH_SHORT).show()
+                R.id.nav_export -> replaceFragment(Export_Pdf(),it.title.toString())
                 R.id.nav_accounts -> Toast.makeText(applicationContext,"Clicked Account", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> logOut()
+                R.id.nav_viz -> visualize()
             }
             true
         }
     }
-    private fun replaceFragment(fragment:Fragment,title:String){
+    override fun replaceFragment(fragment:Fragment,title:String){
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout,fragment)
@@ -74,6 +75,11 @@ class NavigationDrawer : AppCompatActivity(),Comunicator {
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuth.signOut()
         val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private  fun visualize(){
+        val intent = Intent(this,Visualization::class.java)
         startActivity(intent)
     }
 

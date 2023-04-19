@@ -31,7 +31,7 @@ class EditTransaction : Fragment() {
     private lateinit var firebaseStore: FirebaseFirestore
     private lateinit var firebaseUser: FirebaseUser
     private  lateinit var firebaseAuth: FirebaseAuth
-
+    private  lateinit var comunicator: Comunicator
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +42,7 @@ class EditTransaction : Fragment() {
         firebaseStore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseUser = firebaseAuth.getCurrentUser()!!
+        comunicator = activity as Comunicator
 
         val args = this.arguments
         val amount = args?.get("amount")
@@ -83,6 +84,7 @@ class EditTransaction : Fragment() {
                 .addOnCompleteListener{
                     if(it.isSuccessful){
                         Toast.makeText(context,"Expense Updated", Toast.LENGTH_SHORT).show()
+                        comunicator.replaceFragment(DashBoard(),"Dashboard")
                     }else{
                         Toast.makeText(context,"Something Went Wrong While Updating Expense", Toast.LENGTH_SHORT).show()
                     }
@@ -96,6 +98,7 @@ class EditTransaction : Fragment() {
                 .addOnCompleteListener{
                     if(it.isSuccessful){
                         Toast.makeText(context,"Expense Deleted", Toast.LENGTH_SHORT).show()
+                        comunicator.replaceFragment(DashBoard(),"Dashboard")
                     }else{
                         Toast.makeText(context,"Something Went Wrong Wile Deleting Expense", Toast.LENGTH_SHORT).show()
                     }

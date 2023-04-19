@@ -35,6 +35,7 @@ class AddTransaction : Fragment() {
     private lateinit var firebaseStore: FirebaseFirestore
     private lateinit var firebaseUser: FirebaseUser
     private  lateinit var firebaseAuth:FirebaseAuth
+    private  lateinit var comunicator: Comunicator
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +46,8 @@ class AddTransaction : Fragment() {
         firebaseStore = FirebaseFirestore.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseUser = firebaseAuth.getCurrentUser()!!
+
+        comunicator = activity as Comunicator
 
         val myCalender = Calendar.getInstance()
 
@@ -78,6 +81,8 @@ class AddTransaction : Fragment() {
                 .addOnCompleteListener{
                     if(it.isSuccessful){
                         Toast.makeText(context,"Expense Logged", Toast.LENGTH_SHORT).show()
+                        comunicator.replaceFragment(DashBoard(),"Dashboard")
+
                     }else{
                         Toast.makeText(context,"Something Went Wrong", Toast.LENGTH_SHORT).show()
                     }
