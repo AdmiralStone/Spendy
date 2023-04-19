@@ -1,22 +1,20 @@
 package com.example.spendy
 
+import android.R
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.EventListener
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +57,10 @@ class DashBoard : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dash_board, container, false)
         val btn:View = view.findViewById(R.id.add_tran_btn)
+        val dropdown:View = view.findViewById(R.id.dropdown_menu)
+        val adapter =
+            DashBoard().context?.let { ArrayAdapter.createFromResource(it, R.array.filters, R.layout.simple_spinner_item) }
+
 
         totalExp= view.findViewById(R.id.totalExpenseAmount)
 

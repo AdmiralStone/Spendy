@@ -15,5 +15,11 @@
     <string name="delete">Delete</string>
     <string name="generate">Generate</string>
     <string name="visualize">Visualize</string>
+    <string-array name="filters">
+        <item>All</item>
+        <item>Monthly</item>
+        <item>Weekly</item>
+        <item>Daily</item>
+    </string-array>
 
 </resources>
